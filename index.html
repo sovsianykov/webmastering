@@ -6,11 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
 	<title>Serhii Ovsianykov Test Task</title>
-	<script src="js/jQuery.js"></script>
 	<script src="js/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
-<body>
+<body  >
 	<header>
 		<nav>
 			<div class="logo">
@@ -47,7 +48,7 @@
 			</ul>
 		</nav>
 	</header>
-	<div class="container">
+	<div class="container "   >
 		<div class="sidebar">
 			<div class="p"><a href="#"><i class="palette"></i><span>ART</span></a></div>
 			<div class="m"><a href="#"><i class="music"></i><span>MUSIC</span></a></div>
@@ -67,7 +68,7 @@
 			<div class="box1">
 				<div class="news" id="one">
 					<div class="pic">
-						<a href="detail.html">
+						<a href="#" class="reload" >
 							<div class="hover">
 								<div class="readmore">
 									<div class="arrowpic">
@@ -257,8 +258,14 @@
 <script>
 	$('.burger').click(function () {
 	$('.sidebar ').toggleClass('HeaderActive');
-	console.log('Hello')
+
  });
+	$(".reload").click(function(){
+		$.ajax({url: "detail.html", success: function(result){
+				$(".container").html(result);
+			}});
+	});
+
 </script>
 </body>
 
